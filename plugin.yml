@@ -1,0 +1,21 @@
+name: Minion
+author: alvin0319
+main: Minion\Loader
+version: 1.0.0
+api: 4.0.0
+description: MINION!!!!!!!!!!!!!
+
+commands:
+  미니언:
+    description: 미니언 명령어입니다.
+    permission: minion.command.create
+  미니언상점:
+    description: 미니언 상점 명령어입니다.
+    permission: minion.command
+
+permissions:
+  minion.command:
+    default: true
+    children:
+      minion.command.create:
+        default: op
