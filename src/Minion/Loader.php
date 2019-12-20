@@ -29,6 +29,9 @@ class Loader extends PluginBase implements Listener{
 	protected $prefix;
 
 	public function onEnable(){
+		if(!$this->getServer()->getApiVersion() !== "4.0.0"){
+			throw new \RuntimeException("This plugin is not support PocketMine-MP 3.x.y! Please use PocketMine-MP 4.0.0!");
+		}
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		EntityFactory::register(Minion::class, ["Minion"]);
 		$this->saveResource("config.yml");
